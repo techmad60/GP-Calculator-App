@@ -1,8 +1,9 @@
+import Button from "@/components/Button";
 import { HighlightText } from "@/components/HighlightText";
 import { SplashText } from "@/components/SplashText";
 import { useRouter } from "expo-router";
 import React, { useEffect, useRef } from "react";
-import { Animated, Text, TouchableOpacity, View } from "react-native";
+import { Animated, View } from "react-native";
 
 export default function WelcomeScreen(){
   const router = useRouter();
@@ -47,12 +48,7 @@ export default function WelcomeScreen(){
 
       <View className="items-center mt-8">
         <Animated.View style={{ opacity: buttonOpacity }}>
-          <TouchableOpacity
-            onPress={() => router.push('/calculator')}
-            className="bg-accent px-6 py-3 rounded-full"
-          >
-            <Text style={{ fontFamily: 'Irish' }} className="text-primary text-lg">Start</Text>
-          </TouchableOpacity>
+          <Button label="Start" onPress={() => router.push("/calculator")} />
         </Animated.View>
       </View>
     </View>
