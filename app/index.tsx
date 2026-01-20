@@ -24,7 +24,6 @@ export default function Home() {
   const router = useRouter();
   const player = useAudioPlayer(require("../assets/audio/welcome-hoot.mp3"));
 
-
   const slides = [
     {
       image: require("../assets/images/logo.png"),
@@ -50,7 +49,7 @@ export default function Home() {
 
   const onScroll = Animated.event(
     [{ nativeEvent: { contentOffset: { x: scrollX } } }],
-    { useNativeDriver: false }
+    { useNativeDriver: false },
   );
 
   // Auto-advance every 3.5s; pause while user interacts
@@ -85,12 +84,12 @@ export default function Home() {
 
       // Navigate after a short delay to let audio start
       setTimeout(() => {
-        router.push("/(tabs)");
+        router.push("/welcome");
       }, 500);
     } catch (error) {
       console.error("Error playing audio:", error);
       // Navigate anyway if audio fails
-      router.push("/(tabs)");
+      router.push("/welcome");
     }
   };
 

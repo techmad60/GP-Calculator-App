@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "gp-calculator",
+    "name": "Techmad's GP Calculator",
     "slug": "gp-calculator",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -9,17 +9,25 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.techmadsorganization.gpcalculator",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#E4E1D4",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
-        "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ],
+      "package": "techmad_gp.calculator"
     },
     "web": {
       "output": "static",
@@ -45,6 +53,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "0ec68504-58eb-42f9-ac66-6b9ef9f34246"
+      }
+    },
+    "owner": "techmads-organization"
   }
 }

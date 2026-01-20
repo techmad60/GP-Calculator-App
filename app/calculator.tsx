@@ -3,16 +3,16 @@ import GoodLuck from "@/components/GoodLuck";
 import { HighlightText } from "@/components/HighlightText";
 import { SplashText } from "@/components/SplashText";
 import StudyTip, { getRandomTip } from "@/components/StudyTip";
-import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome } from "@expo/vector-icons";
 import { Picker } from "@react-native-picker/picker";
 import { useState } from "react";
 import {
-    Image,
-    Modal,
-    ScrollView,
-    Text,
-    TouchableOpacity,
-    View,
+  Image,
+  Modal,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
 type Course = { unit?: number; grade: string };
@@ -41,7 +41,7 @@ export default function CalculatorScreen() {
   const updateCourse = <K extends keyof Course>(
     index: number,
     field: K,
-    value: Course[K]
+    value: Course[K],
   ) => {
     const updated = [...courses];
     updated[index][field] = value;
@@ -140,7 +140,7 @@ export default function CalculatorScreen() {
               onPress={() => removeCourse(idx)}
               className="bg-accent p-4 rounded"
             >
-                <FontAwesome name="trash" size={24} className="text-primary"/>
+              <FontAwesome name="trash" size={24} className="text-primary" />
             </TouchableOpacity>
           </View>
         ))}
@@ -178,12 +178,12 @@ export default function CalculatorScreen() {
               onPress={() => setIsModalOpen(false)}
               className="absolute -top-4 -right-4 bg-accent p-4 rounded-full z-10"
             >
-              <FontAwesome name="close" size={16} className="text-primary"/>
+              <FontAwesome name="close" size={16} className="text-primary" />
             </TouchableOpacity>
 
             {/* Wizard Owl Image */}
             <Image
-              source={require("../../assets/images/wizard.png")}
+              source={require("../assets/images/wizard.png")}
               style={{ width: 80, height: 80, marginBottom: 16 }}
               resizeMode="contain"
             />
@@ -200,20 +200,29 @@ export default function CalculatorScreen() {
             {/* Results */}
             <View className="gap-4 w-full mb-6">
               <View className="items-center">
-                <Text style={{ fontFamily: "Irish" }} className="text-secondary text-lg ">Total Points :
-                    <HighlightText> {totalPoints}</HighlightText>
+                <Text
+                  style={{ fontFamily: "Irish" }}
+                  className="text-secondary text-lg "
+                >
+                  Total Points :<HighlightText> {totalPoints}</HighlightText>
                 </Text>
               </View>
 
               <View className="items-center">
-                <Text style={{ fontFamily: "Irish" }} className="text-secondary text-lg">Total Unit Load :
-                    <HighlightText> {totalUnits}</HighlightText>
+                <Text
+                  style={{ fontFamily: "Irish" }}
+                  className="text-secondary text-lg"
+                >
+                  Total Unit Load :<HighlightText> {totalUnits}</HighlightText>
                 </Text>
               </View>
 
               <View className="items-center">
-                <Text style={{ fontFamily: "Irish" }} className="text-secondary text-lg">GPA : 
-                    <HighlightText> {gpa}</HighlightText>
+                <Text
+                  style={{ fontFamily: "Irish" }}
+                  className="text-secondary text-lg"
+                >
+                  GPA :<HighlightText> {gpa}</HighlightText>
                 </Text>
               </View>
             </View>
